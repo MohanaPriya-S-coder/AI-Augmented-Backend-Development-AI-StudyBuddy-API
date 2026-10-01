@@ -599,6 +599,7 @@ Students attempting to access admin endpoints receive an authorization error.
 
 # Authentication Flow
 
+```text
         ┌──────────────┐
         │    Student   │
         └──────┬───────┘
@@ -620,7 +621,7 @@ Students attempting to access admin endpoints receive an authorization error.
                          │
                          ▼
                     Admin Role
-
+```
 
 Passwords are hashed using `bcryptjs` and are never stored as plain text.
 
@@ -628,7 +629,7 @@ Passwords are hashed using `bcryptjs` and are never stored as plain text.
 
 # Student Workflow
 
-
+```text
 Register
    │
    ▼
@@ -654,7 +655,7 @@ Select Material
               ▼
        Store & Retrieve
        Generated Resources
-
+```
 
 ---
 
@@ -662,7 +663,7 @@ Select Material
 
 The application sends study material and appropriate prompts to the Google Gemini API.
 
-
+```text
 Study Material
       │
       ▼
@@ -682,11 +683,11 @@ MongoDB
       │
       ▼
 React Frontend
-
+```
 
 > **Note:** AI generation depends on the Gemini API account/project quota. If the configured Gemini API project reaches its quota, AI generation requests may return a quota-related error even though the application and backend are functioning correctly.
 
-
+---
 
 # Security
 
@@ -709,9 +710,9 @@ The project includes several basic security mechanisms:
 
 Start normally:
 
-
+```bash
 npm start
-
+```
 
 Start with automatic restart:
 
@@ -721,15 +722,18 @@ npm run dev
 
 ### Frontend
 
-
+```bash
 cd client
 npm start
+```
 
 Build the frontend:
 
-
+```bash
 npm run build
+```
 
+---
 
 # Testing
 
@@ -741,16 +745,20 @@ The application can be tested using:
 
 Basic backend health check:
 
-
+```bash
 curl http://localhost:5000/api/health
-
+```
 
 Expected:
 
+```json
 {
   "success": true,
   "message": "AI StudyBuddy API is running"
 }
+```
+
+---
 
 # Project Goals
 
@@ -779,15 +787,17 @@ Possible future improvements include:
 - Improved UI/UX
 - Additional AI-generated learning resources
 
+---
 
 # License
 
 This project was developed as a college academic project.
 
+---
 
 ## Project Structure Summary
 
-
+```text
 AI StudyBuddy / LearnMate
 │
 ├── React
@@ -816,3 +826,4 @@ AI StudyBuddy / LearnMate
        ├── Flashcards
        ├── Quizzes
        └── Study Plans
+```
